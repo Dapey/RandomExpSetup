@@ -38,8 +38,17 @@ def generate_grid_and_positions():
 
 
 elements = [
-    "NG-NO-1", "NG-NO-2", "0-NO-1", "0-NO-2", "L-NO-1", "L-NO-2", "M-NO-1", "M-NO-2", "H-NO-1", "H-NO-2",
-    "NG-O-1", "NG-O-2", "0-O-1", "0-O-2", "L-O-1", "L-O-2", "M-O-1", "M-O-2", "H-O-1", "H-O-2",
+    "No Obstacles - No Goggles", "No Obstacles - No Goggles",
+    "No Obstacles - No Blur", "No Obstacles - No Blur",
+    "No Obstacles - Low Blur", "No Obstacles - Low Blur",
+    "No Obstacles - Medium Blur", "No Obstacles - Medium Blur",
+    "No Obstacles - High Blur", "No Obstacles - High Blur",
+    "Obstacles - No Goggles", "Obstacles - No Goggles",
+    "Obstacles - No Blur", "Obstacles - No Blur",
+    "Obstacles - Low Blur", "Obstacles - Low Blur",
+    "Obstacles - Medium Blur", "Obstacles - Medium Blur",
+    "Obstacles - High Blur", "Obstacles - High Blur",
+
 ]
 
 random.shuffle(elements)
@@ -48,10 +57,16 @@ print(elements)
 
 
 # Repeat the process 20 times and print the results for each iteration
-for i in range(10):
+for i in range(20):
     grid, objects, random_positions, obstacle, obstacle_position = generate_grid_and_positions()
 
-    print(f"\nIteration {i + 1}:\n")
+
+    print(f"\n\nTrail {i + 1}:")
+    print(f"Condition: {elements[i]}:\n")
+
+    if "No Obstacles" in elements[i]:
+        continue
+
     for row in grid:
         print(' '.join(row))
 
